@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTrackerDemo", "AssetTrackerDemo\AssetTrackerDemo.csproj", "{252E24A5-0AC7-4AE7-9CD8-195F7A562D71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetTrackerDevice", "AssetTrackerDevice\AssetTrackerDevice.csproj", "{AFF7C0F0-3529-45C5-9238-598BD0AACCF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{252E24A5-0AC7-4AE7-9CD8-195F7A562D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{252E24A5-0AC7-4AE7-9CD8-195F7A562D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{252E24A5-0AC7-4AE7-9CD8-195F7A562D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF7C0F0-3529-45C5-9238-598BD0AACCF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF7C0F0-3529-45C5-9238-598BD0AACCF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF7C0F0-3529-45C5-9238-598BD0AACCF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF7C0F0-3529-45C5-9238-598BD0AACCF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
