@@ -4,6 +4,7 @@ using MQTTnet.Client;
 using Rido.IoTClient;
 using Rido.IoTClient.AzIoTHub;
 using Rido.IoTClient.AzIoTHub.TopicBindings;
+using System.Reflection.Metadata;
 
 namespace dtmi_assettrackerdemo
 {
@@ -35,6 +36,14 @@ namespace dtmi_assettrackerdemo
             client.InitialState = await client.GetTwinAsync(cancellationToken);
             return client;
         }
+
+        public Dictionary<string, object> AllReadOnlyProperties => new Dictionary<string, object>()
+        {
+            { Property_FrameworkVersion.Name, Property_FrameworkVersion.PropertyValue },
+            { Property_SDKVersion.Name, Property_SDKVersion.PropertyValue },
+            { Property_Manufacturer.Name, Property_Manufacturer.PropertyValue }
+        };
+
 
     }
 

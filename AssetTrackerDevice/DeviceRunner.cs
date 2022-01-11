@@ -4,12 +4,12 @@ using Rido.IoTClient.AzIoTHub;
 
 namespace AssetTrackerDevice
 {
-    public class Worker : BackgroundService
+    public class DeviceRunner : BackgroundService
     {
-        private readonly ILogger<Worker> _logger;
+        private readonly ILogger<DeviceRunner> _logger;
         private readonly IConfiguration _configuration;
 
-        public Worker(ILogger<Worker> logger, IConfiguration configuration)
+        public DeviceRunner(ILogger<DeviceRunner> logger, IConfiguration configuration)
         {
             _logger = logger;
             _configuration = configuration;
@@ -40,11 +40,15 @@ namespace AssetTrackerDevice
                 client.Property_Interval.PropertyValue.Value = p.Value;
                 return await Task.FromResult(ack);
             };
-            await client.Property_Interval.InitPropertyAsync(client.InitialState, default_interval, stoppingToken);
-            await client.Property_FrameworkVersion.ReportPropertyAsync(Environment.Version.ToString());
-            await client.Property_Manufacturer.ReportPropertyAsync("Contoso");
-            await client.Property_SDKVersion.ReportPropertyAsync(typeof(IoTHubPnPClient).Assembly.GetName().Version.ToString());
 
+            await client.Property_Interval.InitPropertyAsync(client.InitialState, default_interval, stoppingToken);
+
+            client.Property_FrameworkVersion.PropertyValue = Environment.Version.ToString();
+            client.Property_Manufacturer.PropertyValue = "Contoso";
+            client.Property_SDKVersion.PropertyValue = (typeof(IoTHubPnPClient).Assembly.GetName().Version.ToString());
+
+            await client.ReportPropertyAsync(client.AllReadOnlyProperties, stoppingToken);
+            
             while (!stoppingToken.IsCancellationRequested)
             {
                 var location = await locator.GetGeopositionAsync();
