@@ -30,6 +30,7 @@ namespace AssetTrackerDevice
 
             client.Property_Interval.OnProperty_Updated = async p =>
             {
+                _logger.LogInformation($"Property Desired Prop received: {p.Name}: {p.Value} v {p.Version}");
                 var ack = new PropertyAck<int>(p.Name)
                 {
                     Value = p.Value,
@@ -48,7 +49,8 @@ namespace AssetTrackerDevice
             client.Property_SDKVersion.PropertyValue = (typeof(IoTHubPnPClient).Assembly.GetName().Version.ToString());
 
             await client.ReportPropertyAsync(client.AllReadOnlyProperties, stoppingToken);
-            
+
+            _logger.LogInformation("Loop started with interval: " + client.Property_Interval.PropertyValue.Value);
             while (!stoppingToken.IsCancellationRequested)
             {
                 var location = await locator.GetGeopositionAsync();
