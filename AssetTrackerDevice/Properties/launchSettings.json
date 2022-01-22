@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "AssetTrackerDevice": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "ConnectionStrings__cs": "IdScope=0ne0047D00B;DeviceId=rido-tracker-01;SharedAccessKey=81gPeOIot+L2cwwOwgnaRBuzqpzihpKurt2nGmp28YU="
+      }
+    }
+  }
+}

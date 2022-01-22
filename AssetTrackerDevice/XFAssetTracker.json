@@ -1,0 +1,80 @@
+[
+  {
+    "@id": "dtmi:assetTrackerDemo:XFAssetTrackert0;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:assetTrackerDemo:XFAssetTrackert0:Location;1",
+        "@type": [
+          "Telemetry",
+          "Location"
+        ],
+        "displayName": {
+          "en": "Location"
+        },
+        "name": "Location",
+        "schema": "geopoint"
+      },
+      {
+        "@id": "dtmi:assetTrackerDemo:XFAssetTrackert0:Interval;1",
+        "@type": [
+          "Property",
+          "TimeSpan"
+        ],
+        "displayName": {
+          "en": "Interval"
+        },
+        "name": "Interval",
+        "schema": "integer",
+        "unit": "second",
+        "writable": true
+      },
+      {
+        "@id": "dtmi:assetTrackerDemo:XFAssetTrackert0:Reboot;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Reboot"
+        },
+        "name": "Reboot"
+      },
+      {
+        "@id": "dtmi:assetTrackerDemo:XFAssetTrackert0:FrameworkVersion;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "FrameworkVersion"
+        },
+        "name": "FrameworkVersion",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:assetTrackerDemo:XFAssetTrackert0:SDKVersion;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "SDKVersion"
+        },
+        "name": "SDKVersion",
+        "schema": "string",
+        "writable": false
+      },
+      {
+        "@id": "dtmi:assetTrackerDemo:XFAssetTrackert0:Manufacturer;1",
+        "@type": "Property",
+        "displayName": {
+          "en": "Manufacturer"
+        },
+        "name": "Manufacturer",
+        "schema": "string",
+        "writable": false
+      }
+    ],
+    "displayName": {
+      "en": "XFAssetTracker"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]
